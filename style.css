@@ -1,0 +1,892 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;
+}
+
+.hamburger-menu{
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    top: 3rem;
+    right: 5rem;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    transition: right 0.7s;
+}
+
+.change .hamburger-menu{
+    right: 24rem;
+}
+.line{
+    width: 100%;
+    height: .4rem;
+    background-color: #39ff14;
+    box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.2);
+}
+
+.change .line{
+    height: .2rem;
+    background-color: #39ff14;
+}
+.change .line-1{
+    transform: rotate(45deg) translate(0.3rem,0.8rem);
+}
+
+.change .line-2{
+    opacity: 0;
+    visibility: hidden;
+}
+.change .line-3{
+    transform: rotate(-45deg) translate(0.3rem,-0.8rem);
+}
+.header{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    perspective: 100rem;
+    overflow: hidden;
+}
+
+.img-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);  
+    overflow: hidden; 
+}
+
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; 
+    animation-name: scale;
+    animation-duration: 15s;
+}
+
+@keyframes scale{
+    0%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.logo img{
+    left: 1rem;
+    top: 2rem;
+    height: 12rem;
+    position: absolute;
+}
+
+.banner{
+    position: absolute;
+    top: 8%;
+    left: 27%;
+}
+.banner h1{
+    font-family: 'Metal Mania', cursive;
+    font-size: 10rem;
+    font-weight: 300;
+    color: white;
+    width: 100%;
+    line-height: 9rem;
+    letter-spacing: 0.2rem;
+    text-shadow: 0.3rem 0.5rem rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: moveBanner 0.7s forwards;
+}
+.banner p{
+    font-family: 'Bitter', serif;
+    font-size: 2rem;
+    color: white;
+    width: 100%;
+    line-height: 6rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+    text-shadow:0 0.3rem 0.5rem rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: moveBanner 1s forwards;
+}
+
+@keyframes moveBanner{
+     0%{
+         transform: translateY(40rem) rotateY(-20deg);
+     }
+     100%{
+         transform: translateY(0) rotateY(0);
+         opacity: 1;
+     }
+}
+
+.slidebar{
+    width: 30rem;
+    height: 100rem;
+    position: fixed;
+    top: 0;
+    right: -40rem;
+    background-color: #1a1318f5 ;
+    z-index: 100; 
+}
+
+
+.change .slidebar{
+    right: 0;
+}
+.menu{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.menu-item{
+    text-align: center;
+}
+.menu-link{
+    font-family: 'Itim', cursive;
+    font-size: 3rem;   
+    position: relative;
+    cursor: pointer;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: #fff ;
+    overflow: hidden;
+    transition: 0.2s;
+   
+}
+
+
+.menu-link:hover{
+    font-size: 4rem;
+    background: #4ce930be;
+    box-shadow: 0 0 10px #4ce930be,0 0 40px #4ce930be,0 0 80px #4ce930be;
+    transition-delay: .1s;
+    
+}
+
+
+
+
+
+.about-us{
+   
+     width: 100%;
+     background: url(wood2.jpg) center no-repeat;
+     padding-bottom: 15rem;
+}
+
+.section-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7rem 0 10rem 0;
+}
+.section-heading{
+    font-family: 'Metal Mania', cursive;
+    font-size: 5rem;
+    font-weight: 300;
+    color: #4b4b4b;
+    margin-bottom: 6rem;
+}
+.underline{
+    width: 12rem;
+    height: 0.3rem;
+    background-color: #39ff14;
+}
+
+
+.blur{
+    position: relative;
+    overflow: hidden;
+}
+
+.blur:before{
+    position: absolute;
+    content: '';
+    width: 80%;
+    height: 220%;
+    background: rgba(0,0,0,1);
+    top: -50%;
+    left: -100%;
+    z-index: 1;
+    transform: rotate(25deg);
+    transform-origin: center top 0;
+    transition: .5s;
+}
+.blur:hover:before{
+    left: 10%;
+    box-shadow: 0 0 10px #39ff14,0 0 40px #39ff14,0 0 80px #b12158af;
+}
+.blur img{
+    width: 100%;
+    height: auto;
+}
+
+.blur-info{
+    width: 100%;
+    padding: 0 15px; 
+    position: absolute;
+    top: -100%;
+    color: #39ff14;
+    left: 0.4rem;
+    z-index: 2;
+    transition: 1.1s;
+}
+
+.blur-info h2{
+    font-family: 'Itim', cursive;
+}
+.blur-info h3{
+    font-family: 'Itim', cursive;
+}
+
+.blur:hover .blur-info{
+    top: 50px;
+    
+}
+
+
+
+.service-text {
+    font-family: 'Itim', cursive;
+    font-size: 2.8rem;
+    color: black;
+    width: 100%;
+    line-height: 4rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: rem;
+    /* text-shadow:0 0.1rem 0.3rem rgba(0,0,0,0.4); */
+}
+
+.batch{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.team{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5rem 10rem 5rem;
+    background: 
+    url(wood2.jpg) center no-repeat;
+    background-size: cover;
+}
+.cards-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 8rem;
+    width: 100%;
+}
+.card{
+    width: 37rem;
+    height: 45rem;
+    box-shadow: 0 1rem 4rem rgba(0,0,0,0.4);
+    border-radius: 0.5rem;
+    position: relative;
+}
+.card-img-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+    border-radius: 0.5rem;
+}
+.card-img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    border-radius: 0.5rem;
+    transition: opacity .3s;
+}
+.card:hover .card-img-wrapper img{
+    opacity: 0.4;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2),0 0 40px rgba(0,0,0,0.8),0 0 80px rgba(0,0,0,0.9);
+}
+.card-info{
+      position: absolute;
+      bottom: 0;
+      padding: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3sec;
+}
+.card:hover .card-info{
+    bottom: 2rem;
+    opacity: 1;
+    visibility: visible;
+}
+.card-info h2{
+    font-family: 'Bitter', serif;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    font-weight: 300;
+    color: rgb(254, 255, 255);
+    text-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.4);
+}
+.card-info h3{
+    font-family: 'Bitter', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #01FF70;
+    margin-bottom: 1rem;
+}
+
+.card-info p{
+    font-family:'Bitter', serif;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 300;
+    color: #eee;
+    width: 80%;
+    margin-top: 2rem;
+}
+
+.contact{
+    width: 100%;
+    height: 100vh;
+    background-color: #272727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-wrapper{
+    width: 60%;
+    height: 50rem;
+    display: flex;
+    
+    box-shadow: 0 3rem 7rem rgba(0,0,0,0.5);
+}
+.contact-left{
+    width: 35%;
+    background: 
+    url(feed.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.contact-right{
+    width: 65%;
+    background-color: #eee;
+    padding: 3rem 10rem 10rem 10rem;
+}
+
+.contact-heading{
+    font-family:'Bitter', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: #272727;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.contact-right form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group{
+    position: relative;
+}
+
+.field{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.2rem dashed #636363;
+    margin:2rem 0;
+    padding: 2rem 1rem 1rem 0;
+    font-family:'Bitter', serif;
+    font-size: 1.4rem;
+    color: #4b4b4b;
+}
+
+.input-group input{
+    height:4rem;
+}
+
+.input-group textarea{
+    max-height: 7rem;
+    max-width: 100%;
+}
+
+.field:focus{
+    border-bottom-style: solid;
+}
+
+.input-group label{
+    position: absolute;
+    left: 0;
+    font-family:'Bitter', serif;
+    font-size: 1.8rem;
+    color: #4b4b4b;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+.input-label{
+    bottom: 4rem;
+}
+
+.message{
+    bottom: 6rem;
+}
+
+.field:focus ~label{
+    transform: translateY(-2rem);
+    font-size: 1rem;
+}
+
+.submit-btn{
+    width: 45rem;
+    height: 5rem;
+    background-color: rgba(1, 10, 10, 0.836);
+    color: #fff;
+    border: none;
+    margin-top: 2rem;
+    font-family:'Bitter', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    text-shadow: 0 .1rem .3rem rgba(0,0,0,0.5);
+    box-shadow: 0 .1rem .3rem rgba(0,0,0,0.3);
+}
+.submit-btn:hover{
+    
+    box-shadow: 0 0 10px #39ff14,0 0 40px #39ff14,0 0 80px #000;
+}
+
+.footer{
+    width: 100%;
+    height: 15rem;
+    background-color: #17181b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.copyright{
+    font-family:'Bitter', serif;;
+    font-size: 1.6rem;
+    color: #fff;
+}
+.scroll-btn{
+    position: fixed;
+    right:5rem;
+    bottom: 5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: #39ff14;  
+    box-shadow: 0 0.1 0.6 rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+@media(max-width:1500px){
+    .banner h1{
+        font-size: 50px;
+        line-height: 6rem;
+    }
+    .banner p{
+        font-size: 35px;
+    }
+    .card{
+        width: 34rem;
+    }
+    .contact-wrapper{
+        width: 80%;
+        height: 65rem;
+    }
+    .footer-content{
+        width: 80%;
+    }
+}
+
+@media(max-width:1400px){
+    .banner h1{
+         font-size: 45px;
+         line-height: 7rem;
+    }
+    .banner p{
+        font-size: 35px;
+    }
+    .menu-link{
+        font-size: 3rem;
+    }
+}
+
+@media(max-width:1300px){
+    .banner h1{
+        font-size: 35px;
+        line-height: 6rem;
+    }
+    .banner p{
+        font-size: 25px;
+    }
+    .team{
+        padding-bottom: 5rem;
+    }
+    .cards-wrapper{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+    }
+    .card{
+        margin-bottom: 8rem;
+    }
+    .contact-wrapper{
+        width: 90%;
+        height: 55rem;
+    }
+
+    .contact-heading{
+        margin-bottom: 2rem;
+    }
+    .field{
+        margin: 2rem 0;
+    }
+}
+
+@media(max-width:1000px){
+    html{
+        font-size: 55%;
+    }
+    .banner h1{
+        font-size: 30px;
+        line-height: 6rem;
+    }
+    .banner p{
+        font-size: 20px;
+    }
+    .contact-left{
+        width: 0;
+    }
+    .contact-right{
+        width: 100%;
+    }
+    .field{
+        width: 100%;
+    }
+    .textarea{
+        max-width: 100%;
+    }
+    .submit-btn{
+        width: 55rem;
+    }
+    .footer-content{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 50%;
+    }
+    .copyright{
+        order: 1;
+        margin-top: 3rem;
+    }
+}
+
+@media(max-width:700px){
+    html{
+        font-size: 50%;
+    }
+    .banner h1{
+        font-size: 22px;
+        line-height: 3rem;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .banner p{
+        font-size:18px;
+    }
+    .logo img{   
+        top: 1.2rem;
+        height: 7rem;
+    }
+    .change .hamburger-menu{
+        right: 23rem;
+    }
+    .change .line{
+        height: .3rem;
+        background-color: #39ff14;
+    }
+    .change .line-1{
+        transform: rotate(45deg) translate(0.3rem,0.8rem);
+    }
+    .change .line-3{
+        transform: rotate(-45deg) translate(0.3rem,-0.8rem);
+    }
+    .blur-info h2{
+       
+        padding: 0px 10px; 
+        font-size: 35px;
+        top: -100%;
+        left: 0.01rem;
+       
+    }
+    .blur-info h3{
+       
+        padding: 0px 10px; 
+        font-size: 35px;
+        top: -100%;
+        left: 0.01rem;
+       
+    }
+    .field{
+        width: 100%;
+    }
+    
+    .input-group textarea{
+        max-width: 100%;
+    }
+    .input-group textarea{
+        max-width: 35rem;
+    }
+
+    .submit-btn{
+        width: 35rem;
+    }
+}
+
+@media(max-width:650px){
+    html{
+        font-size: 45%;
+    }
+    .logo img{   
+        top: 1.2rem;
+        height: 6rem;
+    }
+    .banner h1{
+        margin: auto;
+        font-size: 19px;
+        line-height: 3rem;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .banner p{
+        margin: auto;
+        font-size:15px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .change .hamburger-menu{
+        right: 23rem;
+    }
+    .change .line{
+        height: .3rem;
+        background-color: #39ff14;
+    }
+    .change .line-1{
+        transform: rotate(45deg) translate(0.3rem,0.8rem);
+    }
+    .change .line-3{
+        transform: rotate(-45deg) translate(0.3rem,-0.8rem);
+    }
+    .input-group textarea{
+        max-width: 100%;
+    }
+    .footer{
+        height: 18rem;
+    }
+}
+@media(max-width:500px){
+    html{
+        font-size: 45%;
+    }
+    .banner{
+        left: 14vh;
+    }
+    .banner h1{
+        
+        font-size: 16px;
+        line-height: 3rem;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .banner p{
+       
+        font-size:12px;
+        text-align: center;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    .logo img{   
+        top: 1.2rem;
+        height: 5rem;
+    }
+    
+    
+    .menu-item {
+        top: 25%;
+        left: 50%;
+        text-align: center;
+        line-height: 5rem;
+    }
+
+    .menu-link{
+        font-size: 3rem;
+    }
+    .change .hamburger-menu{
+        right: 24rem;
+    }
+    .change .line{
+        height: .3rem;
+        background-color: #39ff14;
+    }
+    .change .line-1{
+        transform: rotate(45deg) translate(0.3rem,0.8rem);
+    }
+    .change .line-3{
+        transform: rotate(-45deg) translate(0.3rem,-0.8rem);
+    }
+    .blur-info h2{
+       
+        padding: 0px 10px; 
+        font-size: 20px;
+        top: -100%;
+        left: 0.01rem;
+       
+    }
+    .blur-info h3{
+       
+        padding: 0px 10px; 
+        font-size: 20px;
+        top: -100%;
+        left: 0.01rem;
+       
+    }
+    .field{
+        font-size: 1.9rem;       
+    }
+    .footer{
+        height: 18rem;
+    }
+}
+@media(max-width:450px){
+    .banner{
+        left: 10vh;
+    }
+}
+@media(max-width:400px){
+    .banner{
+        left: 8vh;
+    }
+    .banner h1{
+        margin: auto;
+        font-size: 14px;
+        line-height: 3rem;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .banner p{
+        margin: auto;
+        font-size:12px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+@media(max-width:360px){
+    html{
+        font-size: 40%;
+    }
+    .logo img{   
+        top: 1.2rem;
+        height: 5rem;
+    }
+    .banner{
+        left: 10vh;
+    }
+    .banner h1{
+        font-size: 13px;
+        line-height: 2rem;
+    }
+    .banner p{
+        font-size:10px;
+        right: 10rem;
+        text-align: center;
+    }
+    .slidebar{
+        height: 100vh;
+    }
+    .change .hamburger-menu{
+        right: 23rem;
+    }
+    .change .line{
+        height: .3rem;
+        background-color: #39ff14;
+    }
+    .change .line-1{
+        transform: rotate(45deg) translate(0.3rem,0.8rem);
+    }
+    .change .line-3{
+        transform: rotate(-45deg) translate(0.3rem,-0.8rem);
+    }
+    .blur-info h2{
+       
+        padding: 0px 10px; 
+        font-size: 20px;
+        top: -100%;
+        left: 0.01rem;
+       
+    }
+    .blur-info h3{
+       
+        padding: 0px 10px; 
+        font-size: 20px;
+        top: -100%;
+        left: 0.01rem;
+       
+    }
+    .field{
+        font-size: 1.9rem;      
+    }
+    .footer{
+        height: 18rem;
+    }
+}
